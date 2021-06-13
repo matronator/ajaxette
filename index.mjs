@@ -7,14 +7,12 @@
 
 function registerAjaxHandlers() {
     const links = document.querySelectorAll(`a.ajax`)
-    if (links) {
-        links.forEach(link => {
-            link.addEventListener(`click`, e => {
-                e.preventDefault()
-                handleNetteResponse(e.target.href)
-            })
+    links?.forEach(link => {
+        link.addEventListener(`click`, e => {
+            e.preventDefault()
+            handleNetteResponse(e.target.href)
         })
-    }
+    })
 }
 
 async function handleNetteResponse(link, data, contentType = `application/json`) {

@@ -1,11 +1,12 @@
 {
   "name": "ajaxette",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Very simple lightweight AJAX implementation for Nette",
-  "main": "dist/main.js",
+  "main": "index.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp --production",
+    "build-babel": "npx babel main.js --out-file index.js --presets=@babel/preset-env",
     "postpost": "npm run report-js",
     "serve": "php -S 127.0.0.1:8000",
     "lint-js": "eslint dev/**/*.js --fix",
@@ -13,9 +14,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "/dist"
+    "index.js",
+    "index.mjs"
   ],
-  "module": "dist/main.js",
+  "module": "index.mjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matronator/ajaxette.git"
@@ -44,6 +46,7 @@
   },
   "homepage": "https://github.com/matronator/ajaxette#readme",
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-optional-chaining": "^7.14.2",
     "@babel/preset-env": "^7.14.4",

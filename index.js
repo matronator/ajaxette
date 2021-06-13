@@ -37,4 +37,5 @@ async function handleNetteResponse(link, data, contentType = `application/json`)
     registerAjaxHandlers()
 }
 
-export { registerAjaxHandlers, handleNetteResponse }
+module.exports.registerAjaxHandlers = registerAjaxHandlers
+module.exports.handleNetteResponse = handleNetteResponse
