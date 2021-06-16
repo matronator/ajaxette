@@ -36,5 +36,3 @@ export async function onAjax(link, data, contentType = `application/json`) {
     })
     init()
 }
-
-export default init

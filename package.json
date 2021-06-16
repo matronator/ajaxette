@@ -1,6 +1,6 @@
 {
   "name": "ajaxette",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Very simple lightweight AJAX implementation for Nette",
   "main": "index.js",
   "scripts": {

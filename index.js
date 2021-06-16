@@ -37,4 +37,6 @@ async function onAjax(link, data, contentType = `application/json`) {
     init()
 }
 
-module.exports.ajaxette = { init, onAjax }
+const ajaxette = { init, onAjax }
+
+module.exports = ajaxette
