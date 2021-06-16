@@ -5,17 +5,19 @@
 * https://opensource.org/licenses/MIT
 */
 
-function registerAjaxHandlers() {
-    const links = document.querySelectorAll(`a.ajax`)
-    links?.forEach(link => {
-        link.addEventListener(`click`, e => {
-            e.preventDefault()
-            handleNetteResponse(e.target.href)
+export function init(ajaxClass = `ajax`) {
+    const links = document.querySelectorAll(`a.${ajaxClass}`)
+    if (links) {
+        links.forEach(link => {
+            link.addEventListener(`click`, e => {
+                e.preventDefault()
+                onAjax(e.target.href)
+            })
         })
-    })
+    }
 }
 
-async function handleNetteResponse(link, data, contentType = `application/json`) {
+export async function onAjax(link, data, contentType = `application/json`) {
     const response = await fetch(link, {
         method: data ? `POST` : `GET`,
         headers: {
@@ -32,7 +34,7 @@ async function handleNetteResponse(link, data, contentType = `application/json`)
         const elem = document.getElementById(id)
         if (elem) elem.innerHTML = html
     })
-    registerAjaxHandlers()
+    init()
 }
 
-export { registerAjaxHandlers, handleNetteResponse }
+export default init
