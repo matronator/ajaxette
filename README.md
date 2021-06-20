@@ -1,3 +1,5 @@
+### WARNING! This package has been renamed! The new repository is here <a href="https://github.com/matronator/axette">matronator/axette</a>.
+
 # Ajaxette
 
 Very simple lightweight AJAX implementation for [Nette](https://nette.org)
